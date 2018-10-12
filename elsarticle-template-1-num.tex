@@ -497,150 +497,150 @@ horizon. Any surplus at time $t_i$ has full value at time $t_j$.
 
 
 
-The \emph{adjacent}
-case for intertemporal substitutability ``transfers'' surplus from adjacent
-time steps into a time step with a shortfall. The surplus-to-shortfall
-``transfers'' surplus some number steps before or after 
-the shortfall to compensate for the shortfall. The ``transfer'' level may be moderated by a
-coefficient that decreases the value of substitution as $t_n$ moves
-further away from the time at shortfall.  Intertemporal
-substitutability $\chi$ becomes a scalar two-column matrix of an
-arbitrary length (For example see Table~\ref{t:chiVec}). The first
-column is an index $j$ defining the amount 
-of steps from the shortfall that is transferable. The second column is
-the fraction of the surplus that is transferable. For example (Table~\ref{t:chiVec}),
- 75\% of surplus occurring one time step after shortfall is available
- to transfer while 100\% of surplus one time step before the shortfall
- is available to transfer.
+%% The \emph{adjacent}
+%% case for intertemporal substitutability ``transfers'' surplus from adjacent
+%% time steps into a time step with a shortfall. The surplus-to-shortfall
+%% ``transfers'' surplus some number steps before or after 
+%% the shortfall to compensate for the shortfall. The ``transfer'' level may be moderated by a
+%% coefficient that decreases the value of substitution as $t_n$ moves
+%% further away from the time at shortfall.  Intertemporal
+%% substitutability $\chi$ becomes a scalar two-column matrix of an
+%% arbitrary length (For example see Table~\ref{t:chiVec}). The first
+%% column is an index $j$ defining the amount 
+%% of steps from the shortfall that is transferable. The second column is
+%% the fraction of the surplus that is transferable. For example (Table~\ref{t:chiVec}),
+%%  75\% of surplus occurring one time step after shortfall is available
+%%  to transfer while 100\% of surplus one time step before the shortfall
+%%  is available to transfer.
 
 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{c l }
-    \hline
-    \hline
-    \textbf{j} & $\mathbf{\chi_j}$ \\
-    \hline
-    3 & 0 \\
-    2 & 0.25 \\
-    1 & 0.75 \\
-    -1 & 1 \\
-    -2 & 0.5 \\
-    -3 & 0.25 \\
-    -4 & 0.1 \\
-    -5 & 0 \\
-    \hline
-  \end{tabular}
-  \caption{Example of the $\chi$ matrix}
-  \label{t:chiVec}
-\end{table}
+%% \begin{table}[h]
+%%   \centering
+%%   \begin{tabular}{c l }
+%%     \hline
+%%     \hline
+%%     \textbf{j} & $\mathbf{\chi_j}$ \\
+%%     \hline
+%%     3 & 0 \\
+%%     2 & 0.25 \\
+%%     1 & 0.75 \\
+%%     -1 & 1 \\
+%%     -2 & 0.5 \\
+%%     -3 & 0.25 \\
+%%     -4 & 0.1 \\
+%%     -5 & 0 \\
+%%     \hline
+%%   \end{tabular}
+%%   \caption{Example of the $\chi$ matrix}
+%%   \label{t:chiVec}
+%% \end{table}
 
-\noindent  The following proposed algorithm applies a
-surplus to shortfall substitution for an arbitrary number of steps away from the performance
-shortfall. The algorithm assumes the surpluses closest in time to the
-shortfalls are first to
-transfer. Figures~\ref{f:Chi2-1},~\ref{f:Chi2-2},~\ref{f:Chi2-3},~\ref{f:Chi2-4},~\ref{f:Chi2-5},~\ref{f:Chi2-6}
-demonstrate the 
-algorithm for surpluses 
-occurring before the shortfall. 
+%% \noindent  The following proposed algorithm applies a
+%% surplus to shortfall substitution for an arbitrary number of steps away from the performance
+%% shortfall. The algorithm assumes the surpluses closest in time to the
+%% shortfalls are first to
+%% transfer. Figures~\ref{f:Chi2-1},~\ref{f:Chi2-2},~\ref{f:Chi2-3},~\ref{f:Chi2-4},~\ref{f:Chi2-5},~\ref{f:Chi2-6}
+%% demonstrate the 
+%% algorithm for surpluses 
+%% occurring before the shortfall. 
 
-\begin{enumerate}
-\item Define the indices ($j$) and the fraction of substitutability
-  ($\chi_j$) for the intertemporal substitutability matrix.
-\item Find a performance shortfall, $\varphi_t < Q_t$. This defines
-  the time $t$ of the shortfall 
-\item Calculate the transferable surplus from the closest index ($j$) before the
-  shortfall, $\psi_{t,j} = \chi_{j}(\varphi_{t-j}-Q_{t-j})$
-\item If $\varphi_t + \psi_{t,j} < Q_t$,
-  \begin{enumerate}
-  \item set $\varphi_t:\varphi_t + \psi_{t,j}$ and
-    $\varphi_{t-j}:Q_{t-j}$.
-  \item Return to Step 2.
-  \end{enumerate}
-\item If $\varphi_t + \psi_{t,j} \geq Q_t$,
-  \begin{enumerate}
-  \item Set $\varphi_t:Q_t$
-  \item Remove the transferred surplus from
-    $\varphi_{t-1} : Q_t + \frac{\psi_{t,j} - (Q_t -
-    \varphi_t)}{\chi_{j}}$.
-  \item  Return to Step 3 with $j$ one step further from the current
-    replacement step.
-  \end{enumerate}
-\item If $\varphi_t<q_t$ and no surplus remains, return to Step 3
-  and apply surplus occurring after the shortfall.
-\item When all \emph{available} surpluses are exhausted, set $\varphi$
-  for all remaining surpluses to $Q_t$. This step ensures that
-  the resilience analytic model does not incorporate inaccessible surpluses. 
-\end{enumerate}
+%% \begin{enumerate}
+%% \item Define the indices ($j$) and the fraction of substitutability
+%%   ($\chi_j$) for the intertemporal substitutability matrix.
+%% \item Find a performance shortfall, $\varphi_t < Q_t$. This defines
+%%   the time $t$ of the shortfall 
+%% \item Calculate the transferable surplus from the closest index ($j$) before the
+%%   shortfall, $\psi_{t,j} = \chi_{j}(\varphi_{t-j}-Q_{t-j})$
+%% \item If $\varphi_t + \psi_{t,j} < Q_t$,
+%%   \begin{enumerate}
+%%   \item set $\varphi_t:\varphi_t + \psi_{t,j}$ and
+%%     $\varphi_{t-j}:Q_{t-j}$.
+%%   \item Return to Step 2.
+%%   \end{enumerate}
+%% \item If $\varphi_t + \psi_{t,j} \geq Q_t$,
+%%   \begin{enumerate}
+%%   \item Set $\varphi_t:Q_t$
+%%   \item Remove the transferred surplus from
+%%     $\varphi_{t-1} : Q_t + \frac{\psi_{t,j} - (Q_t -
+%%     \varphi_t)}{\chi_{j}}$.
+%%   \item  Return to Step 3 with $j$ one step further from the current
+%%     replacement step.
+%%   \end{enumerate}
+%% \item If $\varphi_t<q_t$ and no surplus remains, return to Step 3
+%%   and apply surplus occurring after the shortfall.
+%% \item When all \emph{available} surpluses are exhausted, set $\varphi$
+%%   for all remaining surpluses to $Q_t$. This step ensures that
+%%   the resilience analytic model does not incorporate inaccessible surpluses. 
+%% \end{enumerate}
     
 
  
-\begin{figure}[h]
-  \centering\includegraphics[width=\textwidth]{Chi2-1.pdf}
-  \caption{Intertemporal Substitutability Algorithm Example: Define
-    the $\chi$ Matrix - The left portion of the figure defines
-    the $\chi$ matrix (Step 1). The first shortfall occurs at
-    $t=4$ (Step 2)}
-  \label{f:Chi2-1}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics[width=\textwidth]{Chi2-1.pdf}
+%%   \caption{Intertemporal Substitutability Algorithm Example: Define
+%%     the $\chi$ Matrix - The left portion of the figure defines
+%%     the $\chi$ matrix (Step 1). The first shortfall occurs at
+%%     $t=4$ (Step 2)}
+%%   \label{f:Chi2-1}
+%% \end{figure}
 
 
-\begin{figure}[h]
-  \centering\includegraphics[width=\textwidth]{Chi2-2.pdf}
-  \caption{Intertemporal Substitutability Algorithm Example: Transfer
-    the Closest Surplus and Assess - The available surplus is $\psi$
-    applied to $t=4$ using $j={-1}$ (Step 3)}
-  \label{f:Chi2-2}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics[width=\textwidth]{Chi2-2.pdf}
+%%   \caption{Intertemporal Substitutability Algorithm Example: Transfer
+%%     the Closest Surplus and Assess - The available surplus is $\psi$
+%%     applied to $t=4$ using $j={-1}$ (Step 3)}
+%%   \label{f:Chi2-2}
+%% \end{figure}
 
 
-\begin{figure}[h]
-  \centering\includegraphics[width=\textwidth]{Chi2-3.pdf}
-  \caption{Intertemporal Substitutability Algorithm Example: Transfer
-    the Next Closest Surplus and Assess - The surplus from $t=3$ is
-    not enough to overcome the shortfall (Step 4), so this transfer
-    expends all surplus from $t=3$ (Step 4a), and the algorithm
-    transfers surplus one step further from $t=4$ (Step 3)}
-  \label{f:Chi2-3}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics[width=\textwidth]{Chi2-3.pdf}
+%%   \caption{Intertemporal Substitutability Algorithm Example: Transfer
+%%     the Next Closest Surplus and Assess - The surplus from $t=3$ is
+%%     not enough to overcome the shortfall (Step 4), so this transfer
+%%     expends all surplus from $t=3$ (Step 4a), and the algorithm
+%%     transfers surplus one step further from $t=4$ (Step 3)}
+%%   \label{f:Chi2-3}
+%% \end{figure}
 
 
-(Figure~\ref{f:Chi2-4})
-\begin{figure}[h]
-  \centering\includegraphics[width=\textwidth]{Chi2-4.pdf}
-  \caption{Intertemporal Substitutability Algorithm Example: Find the
-    Next Shortfall and Begin Surplus Transfers - This transfer
-    satisfies the shortfall and leaves a fraction of the surplus at
-    $t=2$ remaining (Step5). With $t=4$ satisfied, the algorithm finds
-    the next shortfall at $t=5$. The first two steps have no surplus,
-    so the algorithm transfers surplus three steps from $t=5$. This
-    exhausts the surplus from $t=2$}
-  \label{f:Chi2-4}
-\end{figure}
-(Figure~\ref{f:Chi2-5}). 
-\begin{figure}[h]
-  \centering\includegraphics[width=\textwidth]{Chi2-5.pdf}
-  \caption{Intertemporal Substitutability Algorithm Example: Execute
-    the Final Available Transfer - The surplus from $t=1$ transfers to
-    $t=5$}
-  \label{f:Chi2-5}
-\end{figure}
+%% (Figure~\ref{f:Chi2-4})
+%% \begin{figure}[h]
+%%   \centering\includegraphics[width=\textwidth]{Chi2-4.pdf}
+%%   \caption{Intertemporal Substitutability Algorithm Example: Find the
+%%     Next Shortfall and Begin Surplus Transfers - This transfer
+%%     satisfies the shortfall and leaves a fraction of the surplus at
+%%     $t=2$ remaining (Step5). With $t=4$ satisfied, the algorithm finds
+%%     the next shortfall at $t=5$. The first two steps have no surplus,
+%%     so the algorithm transfers surplus three steps from $t=5$. This
+%%     exhausts the surplus from $t=2$}
+%%   \label{f:Chi2-4}
+%% \end{figure}
+%% (Figure~\ref{f:Chi2-5}). 
+%% \begin{figure}[h]
+%%   \centering\includegraphics[width=\textwidth]{Chi2-5.pdf}
+%%   \caption{Intertemporal Substitutability Algorithm Example: Execute
+%%     the Final Available Transfer - The surplus from $t=1$ transfers to
+%%     $t=5$}
+%%   \label{f:Chi2-5}
+%% \end{figure}
 
 
 
-\begin{figure}[h]
-  \centering\includegraphics[width=\textwidth]{Chi2-6.pdf}
-  \caption{Intertemporal Substitutability Algorithm Example: Modified
-    Functional Output with All Surpluses Exhausted - The shortfall at
-    $t=5$ cannot be overcome by available surplus, so the algorithm
-    ends with the modified functional output shown above.}
-  \label{f:Chi2-6}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics[width=\textwidth]{Chi2-6.pdf}
+%%   \caption{Intertemporal Substitutability Algorithm Example: Modified
+%%     Functional Output with All Surpluses Exhausted - The shortfall at
+%%     $t=5$ cannot be overcome by available surplus, so the algorithm
+%%     ends with the modified functional output shown above.}
+%%   \label{f:Chi2-6}
+%% \end{figure}
 
-This is one example of how the algorithm could
-end. This performance is the input for the resilient
-analytical model when employing \emph{adjacent} intertemporal
-substitutability. 
+%% This is one example of how the algorithm could
+%% end. This performance is the input for the resilient
+%% analytical model when employing \emph{adjacent} intertemporal
+%% substitutability. 
 % * <ba@umd.edu> 2018-09-23T13:24:23.123Z:
 % 
 % > This is one example of how the algorithm could
@@ -1105,19 +1105,19 @@ their period of command with no concern of quota satisfaction before
 or after them. A surplus of graduates during one quarter may have value
 transferable to the previous or following quarter. The study will
 investigate different types of intertemporal substitutability to include
-\emph{ephemeral}, \emph{permanent}, and \emph{adjacent}
+\emph{ephemeral} and \emph{permanent}
 values. Graduate satisfaction rates are \emph{ephemeral} ($\chi = 0$).
 
 
-\subsection{Study Scenarios}
+%% \subsection{Study Scenarios}
 
-The study has two main thrusts of inquiry. One goal is to demonstrate
-the hybrid resilience framework in the domain of a fleet of systems
-satisfying multiple stakeholders with multiple preference
-profiles. Another goal is to demonstrate the \emph{adjacent}
-intertemporal substitutability algorithm.
+%% The study has two main thrusts of inquiry. One goal is to demonstrate
+%% the hybrid resilience framework in the domain of a fleet of systems
+%% satisfying multiple stakeholders with multiple preference
+%% profiles. Another goal is to demonstrate the \emph{adjacent}
+%% intertemporal substitutability algorithm.
 
-\subsubsection{Hybrid Resilience Framework Demonstration}
+\subsection{Hybrid Resilience Framework Demonstration}
 
 The previous sections discussed the system, simulation, and resilience
 analytical framework. The program manager has three courses of action
@@ -1187,14 +1187,14 @@ quarter.
       Graduates \\ Student Satisfaction} &
     {Three Years} & \makecell[c]{Normal (65) / Surge (90) \\ 85\%} 
     % based on\\ demands for students} 
-    & \makecell{Ephemeral, Permanent, Adjacent \\ Ephemeral} \\
+    & \makecell{Ephemeral, Permanent \\ Ephemeral} \\
     \hline
     \makecell[c]{Program \\ Manager}    & \makecell[c]{Daily Availability \\ Quarterly
       Graduates \\ Student Satisfaction} & {15-35 Years} &
     \makecell[c]{85\% \\ Normal (65) / Surge (90) \\ 85\%} 
       % based upon \\ usage by
       %Commanding Officer} 
-      & \makecell[c]{Ephemeral \\ Ephemeral, Permanent, Adjacent \\ Ephemeral} 
+      & \makecell[c]{Ephemeral \\ Ephemeral, Permanent \\ Ephemeral} 
       \\
     \hline
     \end{tabular}}
@@ -1328,8 +1328,7 @@ and for the \emph{ephemeral} and
 \emph{permanent} values of $\chi$. Figure~\ref{f:PMSatTH} shows results for
 the student satisfaction functional output. Table~\ref{t:PreferredCOA_PM_No_Chi} shows the program
 manager's preferred course of action for each 
-functional outputs' resilience at each time horizon. In the table,
-``Adjacent'' refers to case C4.
+functional outputs' resilience at each time horizon. 
 
 \begin{landscape}
 \begin{figure}[h]
@@ -1621,69 +1620,69 @@ for each course of action and surge status.
 %%   \label{t:PreferredCOA_CO}
 %% \end{table}
 
-\subsection{Intertemporal Substitutability Investigation}
+%% \subsection{Intertemporal Substitutability Investigation}
 
-The second part of this study focused on implementing the
-Intertemporal Substitutability algorithm. The study applied 12
-\emph{adjacent} algorithms and the pre-existing \emph{permanent} and
-\emph{ephemeral} cases. Intertemporal substitutability applied to the
-graduates per quarter functional output of the
-simulation. Figures~\ref{f:PMresultsGradAllChi15}, ~\ref{f:PMresultsGradAllChi20},
-~\ref{f:PMresultsGradAllChi25}, ~\ref{f:PMresultsGradAllChi30}, and
-~\ref{f:PMresultsGradAllChi35}  show the change in
-resilience as the intertemporal substitutability changes for the
-program manager.
+%% The second part of this study focused on implementing the
+%% Intertemporal Substitutability algorithm. The study applied 12
+%% \emph{adjacent} algorithms and the pre-existing \emph{permanent} and
+%% \emph{ephemeral} cases. Intertemporal substitutability applied to the
+%% graduates per quarter functional output of the
+%% simulation. Figures~\ref{f:PMresultsGradAllChi15}, ~\ref{f:PMresultsGradAllChi20},
+%% ~\ref{f:PMresultsGradAllChi25}, ~\ref{f:PMresultsGradAllChi30}, and
+%% ~\ref{f:PMresultsGradAllChi35}  show the change in
+%% resilience as the intertemporal substitutability changes for the
+%% program manager.
 
-\begin{figure}[h]
-  \centering\includegraphics{PMGradAllChiPlotTimeHorizon15}
-  \caption{Program Manager Graduates per Quarter Resilience Results  - 15 Year Time Horizon}
-  \label{f:PMresultsGradAllChi15}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{PMGradAllChiPlotTimeHorizon15}
+%%   \caption{Program Manager Graduates per Quarter Resilience Results  - 15 Year Time Horizon}
+%%   \label{f:PMresultsGradAllChi15}
+%% \end{figure}
 
 
-\begin{figure}[h]
-  \centering\includegraphics{PMGradAllChiPlotTimeHorizon20}
-  \caption{Program Manager Graduates per Quarter Resilience Results  - 20 Year Time Horizon}
-  \label{f:PMresultsGradAllChi20}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{PMGradAllChiPlotTimeHorizon20}
+%%   \caption{Program Manager Graduates per Quarter Resilience Results  - 20 Year Time Horizon}
+%%   \label{f:PMresultsGradAllChi20}
+%% \end{figure}
 
-\begin{figure}[h]
-  \centering\includegraphics{PMGradAllChiPlotTimeHorizon25}
-  \caption{Program Manager Graduates per Quarter Resilience Results - 25 Year Time Horizon}
-  \label{f:PMresultsGradAllChi25}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{PMGradAllChiPlotTimeHorizon25}
+%%   \caption{Program Manager Graduates per Quarter Resilience Results - 25 Year Time Horizon}
+%%   \label{f:PMresultsGradAllChi25}
+%% \end{figure}
 
-\begin{figure}[h]
-  \centering\includegraphics{PMGradAllChiPlotTimeHorizon30}
-  \caption{Program Manager Graduates per Quarter Resilience Results  - 30 Year Time Horizon}
-  \label{f:PMresultsGradAllChi30}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{PMGradAllChiPlotTimeHorizon30}
+%%   \caption{Program Manager Graduates per Quarter Resilience Results  - 30 Year Time Horizon}
+%%   \label{f:PMresultsGradAllChi30}
+%% \end{figure}
 
-\begin{figure}[h]
-  \centering\includegraphics{PMGradAllChiPlotTimeHorizon35}
-  \caption{Program Manager Graduates per Quarter Resilience Results - 35 Year Time Horizon}
-  \label{f:PMresultsGradAllChi35}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{PMGradAllChiPlotTimeHorizon35}
+%%   \caption{Program Manager Graduates per Quarter Resilience Results - 35 Year Time Horizon}
+%%   \label{f:PMresultsGradAllChi35}
+%% \end{figure}
 
-Figures~\ref{f:CO_D_Grad} and ~\ref{f:CO_E_Grad} show
-the resilience values for all intertemporal substitutability
-preferences from the perspective of Commanders Delta and 
-Echo. The SLEP process and surge occur during these two commanders'
-tenure.
+%% Figures~\ref{f:CO_D_Grad} and ~\ref{f:CO_E_Grad} show
+%% the resilience values for all intertemporal substitutability
+%% preferences from the perspective of Commanders Delta and 
+%% Echo. The SLEP process and surge occur during these two commanders'
+%% tenure.
 
-\begin{figure}[h]
-  \centering\includegraphics{CDR_Delta_GradRes}
-  \caption{Commander Delta Graduate per Quarter Resilience Results for
-  Each Intertemporal Substitutability Profile}
-  \label{f:CO_D_Grad}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{CDR_Delta_GradRes}
+%%   \caption{Commander Delta Graduate per Quarter Resilience Results for
+%%   Each Intertemporal Substitutability Profile}
+%%   \label{f:CO_D_Grad}
+%% \end{figure}
 
-\begin{figure}[h]
-  \centering\includegraphics{CDR_Echo_GradRes}
-  \caption{Commander Echo Resilience Results for
-  Each Intertemporal Substitutability Profile}
-  \label{f:CO_E_Grad}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{CDR_Echo_GradRes}
+%%   \caption{Commander Echo Resilience Results for
+%%   Each Intertemporal Substitutability Profile}
+%%   \label{f:CO_E_Grad}
+%% \end{figure}
 
 \section{Discussion}
 \label{s:Disc}
@@ -1708,46 +1707,46 @@ the sacrifice the Commanding Officers would make. The ``As-Is'' course
 of action almost guarantees meeting the student satisfaction goals
 with ``Small SLEP'' and ``Large SLEP'' becoming worse.
 
-\subsection{Intertemporal Substitutability Algorithm Demonstration}
+%% \subsection{Intertemporal Substitutability Algorithm Demonstration}
 
-The study demonstrated a novel intertemporal substitutability
-algorithm. The algorithm enables time and event dependent
-surplus substitutability. The algorithm prepped the graduates per
-quarter time-series data for the resilience analytical model. Figures
-~\ref{f:PMGradTH},
-~\ref{f:PMresultsGradAllChi15}-~\ref{f:PMresultsGradAllChi35},
-and ~\ref{f:CDR_D_Grad}-~\ref{f:CDR_E_Grad} show these 
-results. The algorithm differentiates between surplus before and after
-a shortfall. The \emph{permanent} case showed little decision support
-when a course of action was viable
-(Figures~\ref{f:PMresultsGradAllChi15},
-~\ref{f:PMresultsGradAllChi20},
-~\ref{f:PMresultsGradAllChi25},
-~\ref{f:PMresultsGradAllChi30}) as the bulk of the resilience
-values went to one.  The intertemporal substitutability case-to-case
-change in resilience is evident from the figures. The trend fits with
-intuition with an increasing trend when more time steps 
-surplus percentage are available to transfer.
+%% The study demonstrated a novel intertemporal substitutability
+%% algorithm. The algorithm enables time and event dependent
+%% surplus substitutability. The algorithm prepped the graduates per
+%% quarter time-series data for the resilience analytical model. Figures
+%% ~\ref{f:PMGradTH},
+%% ~\ref{f:PMresultsGradAllChi15}-~\ref{f:PMresultsGradAllChi35},
+%% and ~\ref{f:CDR_D_Grad}-~\ref{f:CDR_E_Grad} show these 
+%% results. The algorithm differentiates between surplus before and after
+%% a shortfall. The \emph{permanent} case showed little decision support
+%% when a course of action was viable
+%% (Figures~\ref{f:PMresultsGradAllChi15},
+%% ~\ref{f:PMresultsGradAllChi20},
+%% ~\ref{f:PMresultsGradAllChi25},
+%% ~\ref{f:PMresultsGradAllChi30}) as the bulk of the resilience
+%% values went to one.  The intertemporal substitutability case-to-case
+%% change in resilience is evident from the figures. The trend fits with
+%% intuition with an increasing trend when more time steps 
+%% surplus percentage are available to transfer.
 
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=5in]{CDR_Delta_GradRes}
-  \end{center}
-\begin{quote}
-  \caption{Commander Delta intertemporal substitutability
-  \label{f:CDR_D_Grad}}
-\end{quote}
-\end{figure}
+%% \begin{figure}[h]
+%%   \begin{center}
+%%     \includegraphics[width=5in]{CDR_Delta_GradRes}
+%%   \end{center}
+%% \begin{quote}
+%%   \caption{Commander Delta intertemporal substitutability
+%%   \label{f:CDR_D_Grad}}
+%% \end{quote}
+%% \end{figure}
 
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=5in]{CDR_Echo_GradRes}
-  \end{center}
-\begin{quote}
-  \caption{Commander Echo intertemporal substitutability
-  \label{f:CDR_E_Grad}}
-\end{quote}
-\end{figure}
+%% \begin{figure}[h]
+%%   \begin{center}
+%%     \includegraphics[width=5in]{CDR_Echo_GradRes}
+%%   \end{center}
+%% \begin{quote}
+%%   \caption{Commander Echo intertemporal substitutability
+%%   \label{f:CDR_E_Grad}}
+%% \end{quote}
+%% \end{figure}
 
 
 \subsection{Future Work}
@@ -1775,11 +1774,11 @@ statistics for loss of aircraft.
 % > Resilience
 % I found the figures at the end of the pdf
 % 
-% ^.
-This study and earlier works have developed the concept of
-intertemporal substitutability. 
+%% % ^.
+%% This study and earlier works have developed the concept of
+%% intertemporal substitutability. 
 
-Randomizing the size, length, and number of student surge periods. 
+%% Randomizing the size, length, and number of student surge periods. 
 
 
 %% \section{}
