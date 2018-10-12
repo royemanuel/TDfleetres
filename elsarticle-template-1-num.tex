@@ -1214,47 +1214,47 @@ before and after had an impact. Table~\ref{t:StakeholderChiPreferences} shows th
 values used. Negative time steps are time steps before the shortfall
 while positive time steps  are after the shortfall. 
 
-\begin{table}[h]
-    \caption{Values for $\chi$ Matrices}
-  \label{t:StakeholderChiPreferences}
-  \begin{center}
-  \begin{tabular}{l c c c c c c c c}
-    \hline
-    \hline
-    & \multicolumn{8}{c}{\textbf{Index ($j$)}}\\\cline{2-9}
-    \textbf{Case} &
-    \textbf{-4} &
-    \textbf{-3} &
-    \textbf{-2} &
-    \textbf{-1} &
-    \textbf{1} &
-    \textbf{2} &
-    \textbf{3} &
-    \textbf{4}\\
-    \hline
-    %%     &   -4 &   -3 &   -2 &   -1 &    1 &    2 &    3 &    4 \\
-    \multicolumn{9}{l}{Substitute only \emph{after} shortfall} \\
-    A1 &    0 &    0 &    0 &    0 &  0.5 &    0 &    0 &    0 \\                       
-    A2 &    0 &    0 &    0 &    0 &  0.5 & 0.25 &    0 &    0 \\                       
-    A3 &    0 &    0 &    0 &    0 &    1 &  0.5 &    0 &    0 \\
-    A4 &    0 &    0 &    0 &    0 &    1 &    1 &    1 &    1\ldots \\
-    \multicolumn{9}{l}{Substitute only \emph{before} shortfall} \\
-    B1 &    0 &    0 &    0 &  0.5 &    0 &    0 &    0 &    0 \\                       
-    B2 &    0 &    0 & 0.25 &  0.5 &    0 &    0 &    0 &    0 \\                       
-    B3 &    0 &    0 &  0.5 &    1 &    0 &    0 &    0 &    0 \\
-    B4 & \ldots1 & 1 &    1 &    1 &    0 &    0 &    0 &    0 \\
-    \multicolumn{9}{l}{Substitute \emph{before} \& \emph{after} shortfall} \\
-    C1 &    0 &    0 &    0 &  0.5 &  0.5 &    0 &    0 &    0 \\                       
-    C2 &    0 &    0 &  0.5 &    1 &    1 &  0.5 &    0 &    0 \\                       
-    C3 &    0 &    0 & 0.25 &  0.5 &  0.5 & 0.25 &    0 &    0 \\                       
-    C4 & 0.25 &  0.5 & 0.75 &    1 &    1 & 0.75 &  0.5 & 0.25 \\                       
-    Ephemeral &  0 &  0 &    0 &  0 &    0 &    0 &    0 &    0 \\                       
-    Permanent & \ldots 1 &  1 &    1 &  1 &    1 &    1 &    1 &
-    1\ldots \\
-    \hline
-  \end{tabular}
-  \end{center}
-\end{table}
+%% \begin{table}[h]
+%%     \caption{Values for $\chi$ Matrices}
+%%   \label{t:StakeholderChiPreferences}
+%%   \begin{center}
+%%   \begin{tabular}{l c c c c c c c c}
+%%     \hline
+%%     \hline
+%%     & \multicolumn{8}{c}{\textbf{Index ($j$)}}\\\cline{2-9}
+%%     \textbf{Case} &
+%%     \textbf{-4} &
+%%     \textbf{-3} &
+%%     \textbf{-2} &
+%%     \textbf{-1} &
+%%     \textbf{1} &
+%%     \textbf{2} &
+%%     \textbf{3} &
+%%     \textbf{4}\\
+%%     \hline
+%%     %%     &   -4 &   -3 &   -2 &   -1 &    1 &    2 &    3 &    4 \\
+%%     \multicolumn{9}{l}{Substitute only \emph{after} shortfall} \\
+%%     A1 &    0 &    0 &    0 &    0 &  0.5 &    0 &    0 &    0 \\                       
+%%     A2 &    0 &    0 &    0 &    0 &  0.5 & 0.25 &    0 &    0 \\                       
+%%     A3 &    0 &    0 &    0 &    0 &    1 &  0.5 &    0 &    0 \\
+%%     A4 &    0 &    0 &    0 &    0 &    1 &    1 &    1 &    1\ldots \\
+%%     \multicolumn{9}{l}{Substitute only \emph{before} shortfall} \\
+%%     B1 &    0 &    0 &    0 &  0.5 &    0 &    0 &    0 &    0 \\                       
+%%     B2 &    0 &    0 & 0.25 &  0.5 &    0 &    0 &    0 &    0 \\                       
+%%     B3 &    0 &    0 &  0.5 &    1 &    0 &    0 &    0 &    0 \\
+%%     B4 & \ldots1 & 1 &    1 &    1 &    0 &    0 &    0 &    0 \\
+%%     \multicolumn{9}{l}{Substitute \emph{before} \& \emph{after} shortfall} \\
+%%     C1 &    0 &    0 &    0 &  0.5 &  0.5 &    0 &    0 &    0 \\                       
+%%     C2 &    0 &    0 &  0.5 &    1 &    1 &  0.5 &    0 &    0 \\                       
+%%     C3 &    0 &    0 & 0.25 &  0.5 &  0.5 & 0.25 &    0 &    0 \\                       
+%%     C4 & 0.25 &  0.5 & 0.75 &    1 &    1 & 0.75 &  0.5 & 0.25 \\                       
+%%     Ephemeral &  0 &  0 &    0 &  0 &    0 &    0 &    0 &    0 \\                       
+%%     Permanent & \ldots 1 &  1 &    1 &  1 &    1 &    1 &    1 &
+%%     1\ldots \\
+%%     \hline
+%%   \end{tabular}
+%%   \end{center}
+%% \end{table}
 
 
 \section{Results}
