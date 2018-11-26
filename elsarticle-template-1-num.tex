@@ -82,7 +82,7 @@
 
 %% Title, authors and addresses
 
-\title{A Hybrid Resilience Framework for Aircraft Fleets with Intertemporal Substitutability of Stakeholder-Defined Values}
+\title{A Hybrid Resilience Framework to Apply Stakeholder Preferences to Aircraft Fleets}
 % * <ba@umd.edu> 2018-09-23T13:01:25.186Z:
 % 
 % > Application
@@ -336,42 +336,55 @@ perform?'', and ``What value will today's surplus output have when the
 system suffers a disturbance in functional output?''
 \cite{Emanuel2017,Emanuel2018} 
 
-%% \subsection{Generalized Hybrid Model}
-\citet{Shanthikumar1983} describe four types of hybrid models composed
-of analytical models and simulations. In a class I hybrid model, an analytical model and a
-simulation work indpendently to provide analyst's solution. A class II
-model uses an analytic model to scope the sampling space for the
-simulation. An simulation feeds results into an analytical model in a
-class III model (Figure~\ref{f:ClassIIIOnly}. The roles reverse in a
-class IV model with the analytic model providing results to the
-simulation.
+%% %% \subsection{Generalized Hybrid Model}
+%% \citet{Shanthikumar1983} describe four types of hybrid models composed
+%% of analytical models and simulations. In a class I hybrid model, an analytical model and a
+%% simulation work indpendently to provide analyst's solution. A class II
+%% model uses an analytic model to scope the sampling space for the
+%% simulation. An simulation feeds results into an analytical model in a
+%% class III model (Figure~\ref{f:ClassIIIOnly}. The roles reverse in a
+%% class IV model with the analytic model providing results to the
+%% simulation.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=5in]{ClassIIIOnly}
-\end{center}
-\renewcommand{\baselinestretch}{1}
-\small\normalsize
-\begin{quote}
-\caption[Class III hybrid simulation analytic model]{Class III hybrid
-  simultion/analytic model \cite{Shanthikumar1983}
-\label{f:ClassIIIOnly}}
-\end{quote}
-\end{figure}
+%% \begin{figure}
+%% \begin{center}
+%% \includegraphics[width=5in]{ClassIIIOnly}
+%% \end{center}
+%% \renewcommand{\baselinestretch}{1}
+%% \small\normalsize
+%% \begin{quote}
+%% \caption[Class III hybrid simulation analytic model]{Class III hybrid
+%%   simultion/analytic model \cite{Shanthikumar1983}
+%% \label{f:ClassIIIOnly}}
+%% \end{quote}
+%% \end{figure}
 
 
-The class III hybrid model explicitly separates the system data and the
-resilience analytical model in Figure~\ref{f:ClassIIIOnly}. The
-``system'' shown in Figure~\ref{f:ClassIIIRes} splits into the
-system and the stakeholder. The system informs the data generation
-method. Data generation methods include data collected from the system
-in operation; data collected from similar systems or systems under
-test; or a simulation of the system. Endogenous preference, time
-horizon, and intertemporal substitutability populate the stakeholder
-model. Some data generation methods may include portions of the
-stakeholder profile; for instance, a simulation may model the storage
-capacity of the system. The stakeholder preference profile must take
-this into account. 
+
+The class III hybrid simulation/analytical model described by
+\citet{Shanthikumar1983} provided the basis for the hybrid resilience
+framework (Figure~\ref{f:ClassIIIRes}. The hybrid resilience framework
+comprises a system model, a stakeholder preference model, and a resilience
+model. Figure~\ref{f:ClassIIIRes} depicts the
+relationships. The hybrid framework guided
+development of the required functional output data, stakeholder
+preferences, and the resilience analytical model. The framework connects  the
+outputs of the system of interest (\emph{of what?}), the threats to system
+performance (\emph{to what?}),
+and the desires of different stakeholders (\emph{for whom?}) to produce a resilience
+value that can communicate comparative resilience among options for
+ stakeholders with conflicting and concordant preferences.
+%% The system model provided the
+%% functional output data and served as the simulation. The resilience
+%% model served as the analytical model. The hybrid resilience framework
+%% further developed the class III hybrid model by defining a stakeholder
+%% model to provide input to the resilience model.
+%%  Endogenous preference, time
+%% horizon, and intertemporal substitutability populate the stakeholder
+%% model. Some data generation methods may include portions of the
+%% stakeholder profile; for instance, a simulation may model the storage
+%% capacity of the system. The stakeholder preference profile must take
+%% this into account. 
 
 \begin{figure}
 \begin{center}
@@ -386,24 +399,15 @@ this into account.
 \end{figure}
 
 
-The resilience framework, based upon the Class III hybrid model
-% * <ba@umd.edu> 2018-09-23T13:15:10.967Z:
-% 
-% > Class III
-% What are al the Classes?
-% 
-% ^.
-proposed by Shanthikumar and Sargent \cite{Shanthikumar1983},
-comprises the system models, a stakeholder preference model, and a resilience
-model. Figure~\ref{f:ClassIIIRes} depicts the
-relationships. The hybrid model guides
-developing the required functional output data, stakeholder
-preferences, and the resilience analytical model. The framework connects  the
-outputs of the system of interest (\emph{of what?}), the threats to system
-performance (\emph{to what?}),
-and the desires of different stakeholders (\emph{for whom?}) to produce a resilience
-value that can communicate comparative resilience among options for
- stakeholders with conflicting and concordant preferences.
+%% The resilience framework, based upon the Class III hybrid model
+%% % * <ba@umd.edu> 2018-09-23T13:15:10.967Z:
+%% % 
+%% % > Class III
+%% % What are al the Classes?
+%% % 
+%% % ^.
+%% proposed by Shanthikumar and Sargent \cite{Shanthikumar1983},
+%% comprises the system models, 
 
 The hybrid resilience framework guides the analyst through the examination of such systems:
 \begin{enumerate}
@@ -455,7 +459,7 @@ output that satisfies stakeholder needs, the overall time period the
 system must operate to be useful to the stakeholder, and the ability
 to time-shift surplus functional output to periods of shortage.
 
-\subsubsection{Stakeholder Preference Profiles: Endogoneous Preference}
+%% \subsubsection{Stakeholder Preference Profiles: Endogoneous Preference}
 
 Endogeneous preference, $Q$, is the amount of the functional output
 that a stakeholder desires at a given time \cite{Black2013}.  Many
@@ -466,7 +470,7 @@ after a disturbance \cite{Emanuel2017}. The hybrid resilience
 framework allows for time and disturbance dependent endogeneous
 preferences \cite{Emanuel2018}.
 
-\subsubsection{Stakeholder Preference Profiles: Time Horizon}
+%% \subsubsection{Stakeholder Preference Profiles: Time Horizon}
 Time horizon, $t_h$, is the furthest time in the future that a stakeholder 
 has interest in an item or process \cite{Black2013}. The concept has a
 significant impact on the results 
@@ -482,8 +486,8 @@ horizon changes with a change in stakeholder perspective
 some cases. In the environment we are discussing, a key source of
 uncertainty is the possibility of a delay in a follow-on capability.
 
-\subsubsection{Stakeholder Preference Profiles: Intertemporal
-  Substitutability}
+%% \subsubsection{Stakeholder Preference Profiles: Intertemporal
+%%   Substitutability}
 
 Intertemporal substitutability,$\chi$, is the ``replacement of the consumption
 of a good or service at one point in time by consumption at a
@@ -724,7 +728,7 @@ description.
     \makecell[l]{The latest time that a stakeholder \\
               is interested in system output} \\
     Endogenous preference &
-    $q_t$ &
+    $Q_t$ &
     \makecell[l]{Output desired by stakeholder\\
               at time $t$} \\
     \makecell[l]{Intertemporal\\substitutability} &
@@ -1182,17 +1186,18 @@ quarter.
   \begin{tabular}{l c c c c }
     \hline
     \hline
-    \textbf{Stakeholder} & \textbf{Critical Output} & \textbf{Time Horizon}
+    \textbf{Stakeholder} & \textbf{Critical Output} &
+    \makecell{\textbf{Time Horizon} & (years)}
     & \makecell[c]{\textbf{Endogenous} \\ \textbf{Preference}} & \makecell[c]{\textbf{Intertemporal} \\ \textbf{Substitutability}} \\
     \hline
     \makecell[c]{Commanding \\ Officer} & \makecell[c]{Quarterly
       Graduates \\ Student Satisfaction} &
-    {Three Years} & \makecell[c]{Normal (65) / Surge (90) \\ 85\%} 
+    3 & \makecell[c]{Normal (65) / Surge (90) \\ 85\%} 
     % based on\\ demands for students} 
     & \makecell{Ephemeral, Permanent \\ Ephemeral} \\
     \hline
     \makecell[c]{Program \\ Manager}    & \makecell[c]{Daily Availability \\ Quarterly
-      Graduates \\ Student Satisfaction} & {15-35 Years} &
+      Graduates \\ Student Satisfaction} & 15-35 &
     \makecell[c]{85\% \\ Normal (65) / Surge (90) \\ 85\%} 
       % based upon \\ usage by
       %Commanding Officer} 
@@ -1277,27 +1282,22 @@ while positive time steps  are after the shortfall.
 The discrete event simulation produces time-series data for aircraft
 disposition and status status; graduates, attrites, and matriculated
 students; and time to graduate for each
-student. Figures~\ref{f:ts_no_surge} shows an example run for the ``No
-surge'' scenarios for each course of action. The solid line is the number of aircraft on the
+student. %% Figures~\ref{f:ts_no_surge} shows an example run for the ``No
+%% surge'' scenarios for each course of action. 
+Figure ~\ref{f:ts_surge} show an single run for each course of action
+in the ``Surge'' sceanrio. The solid line is the number of aircraft on the
 flightline, the dashed line is the desired number of graduates per
 quarter, and the points are the actual number of graduates in a
-quarter. Figure ~\ref{f:ts_surge} shows the same information for the
-% * <ba@umd.edu> 2018-09-23T13:35:05.335Z:
-% 
-% > Figure
-% Figures not in pdf
-% 
-% ^.
-``Surge'' scenario. The shaded area from 12-14 years highlights the
+quarter. The shaded area from 12-14 years highlights the
 two year surge in required graduates.
 
 
-\begin{figure}[h]
-  \centering\includegraphics{time_series_fleet_no_surge}
-  \caption{Simulation Output Example of Aircraft Data and Quarterly
-    Graduates for each SLEP Option without Surge in Students}
-  \label{f:ts_no_surge}
-\end{figure}
+%% \begin{figure}[h]
+%%   \centering\includegraphics{time_series_fleet_no_surge}
+%%   \caption{Simulation Output Example of Aircraft Data and Quarterly
+%%     Graduates for each SLEP Option without Surge in Students}
+%%   \label{f:ts_no_surge}
+%% \end{figure}
 
 \begin{figure}[h]
   \centering\includegraphics{time_series_fleet_surge}
