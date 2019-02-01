@@ -871,9 +871,7 @@ set as depicted in Table~\ref{t:PartSettings}. Parts repair is
 as good as new, and the time to repair distribution is defined as a
 log-normal distribution that remains the same throughout time. Further
 studies could capture the uncertainty of these parameters and their
-time/use dependence. The focus of this study is the intertemporal
-substitutability factor and the discrete calculation of resilience, so
-that will wait for another time.
+time/use dependence. 
 
 Each part subclass, airframe, avionics, and propulsion has its own
 failure distribution, repair distribution, SLEP trigger time,
@@ -930,7 +928,7 @@ summarizes the above parameters used for the students. The class size
 can be manipulated to reflect the changing needs of the squadron
 commander stakeholder and for sundown of the system. Instructors are
 not a key part of this study. They may fly three flights a
-day. For the purposes of this study instructors are controlled
+day. 
 
 \begin{table}[h]
   \caption{Model Parameter Values for Students and Instructors}
@@ -1001,11 +999,11 @@ daily flight schedule to accommodate these changes.
 
 
 The scheduler assesses the available aircraft, instructors,
-and students to make a match for the. Aircraft that have surpassed their SLEP flight hours are
+and students to make a match for the flights during an event. Aircraft that have surpassed their SLEP flight hours are
 sent to the SLEP line.  Aircraft in the SLEP line wait for an
 SLEP spot to become available. Once an aircraft is in a SLEP spot, it
 returns to the flight line after six or nine months, depending on the life
-added to the system.  When aircraft that have surpassed their lifetime
+added to the system.  When aircraft have surpassed their lifetime
 they are no longer available for SLEP
 or the flight schedule. For each event, the scheduler makes
 student-instructor-aircraft matches for each event until one of the
@@ -1203,17 +1201,17 @@ quarter.
 \end{table}
 
 
-\subsubsection{Intertemporal Substitutability Investigation}
+%% \subsubsection{Intertemporal Substitutability Investigation}
 
-The study conducted an exploration of intertemporal substitutability
-values applied to the algorithm described above. This is applicable to
-the graduates per quarter functional output. Simulation data
-post-processing applied 12 different values for $\chi$ to graduates
-per quarter. The values for $\chi$ adjusted the amount of time steps
-that had value, the coefficient of the value, and whether surplus
-before and after had an impact. Table~\ref{t:StakeholderChiPreferences} shows the
-values used. Negative time steps are time steps before the shortfall
-while positive time steps  are after the shortfall. 
+%% The study conducted an exploration of intertemporal substitutability
+%% values applied to the algorithm described above. This is applicable to
+%% the graduates per quarter functional output. Simulation data
+%% post-processing applied 12 different values for $\chi$ to graduates
+%% per quarter. The values for $\chi$ adjusted the amount of time steps
+%% that had value, the coefficient of the value, and whether surplus
+%% before and after had an impact. Table~\ref{t:StakeholderChiPreferences} shows the
+%% values used. Negative time steps are time steps before the shortfall
+%% while positive time steps  are after the shortfall. 
 
 %% \begin{table}[h]
 %%     \caption{Values for $\chi$ Matrices}
@@ -1534,14 +1532,15 @@ usually ends with Commander Kilo (K), but occasionally reaches
 Commander Lima. When a simulation runs out of aircraft, the Commander
 receives no resilience value.
 
-Figure~\ref{f:CO_Grad} shows the resilience
-results for graduates per quarter for three intertemporal
-substitutability values: the \emph{ephemeral} case, the
-\emph{permanent} case and  \emph{adjacent} case C3
-(Table~\ref{t:StakeholderChiPreferences}). Figure ~\ref{f:CO_Sat} shows the results for
-resilience of satisfied graduates (less than 60 days in the squadron)
-for each course of action and surge status.
-%% Figures~\ref{CO_D_Grad} and \ref{CO_E_Grad} 
+%% Figure~\ref{f:CO_Grad} shows the resilience
+%% results for graduates per quarter for three intertemporal
+%% substitutability values: the \emph{ephemeral} case, the
+%% \emph{permanent} case and  \emph{adjacent} case C3
+%% (Table~\ref{t:StakeholderChiPreferences}). Figure ~\ref{f:CO_Sat} shows the results for
+%% resilience of satisfied graduates (less than 60 days in the squadron)
+%% for each course of action and surge status.
+%% %% Figures~\ref{CO_D_Grad} and \ref{CO_E_Grad}
+
 
 \begin{figure}[h]
   \centering\includegraphics[width=5in]{CO_Sat}
@@ -1751,8 +1750,7 @@ were held constant in this study for the purpose of demonstrating the
 framework. These include failure rates, attrition rates, and number of
 flights in the curriculum. Future work would look at varying more of the model parameters,
 introducing variable and multiple student surge production, and
-statistics for loss of aircraft. The instructor pilots and maintenance
-personnel are also key 
+statistics for loss of aircraft. 
 
 %\subsubsection{Resilience Analysis}
 % * <ba@umd.edu> 2018-09-23T13:37:01.505Z:
