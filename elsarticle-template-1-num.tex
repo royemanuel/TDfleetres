@@ -175,50 +175,56 @@ Resilience \sep Simulation \sep Preferences \sep Endogenous Preference
 \section{Motivation}
 \label{S:1}
 
-The U.S. Department of Defense (DoD) manages an
-incredible number of complicated systems that must operate in austere
-and unforgiving environments while being sustained for long periods of
-time.  Through these challenges, the DoD must assure mission success
-through the fielding, aging, and replacement of these systems. The DoD
-stresses the importance of resilience when defining mission assurance:
-``\ldots a process to protect or ensure the continued function and
-resilience of capabilities \ldots'' \cite{DepartmentofDefense2016a}
-The current U.S. National Security Strategy prioritizes increased
-government resilience functions \cite{Trump2017}. The National
-Security Strategy builds upon earlier Presidential Policy Directives
-defining the future posture of critical infrastructure
-systems. \cite{PPD8,PPD21}.
+The U.S. Department of Defense (DoD) manages an incredible number of
+complicated systems that must operate in austere and unforgiving
+environments while being sustained for long periods of time.  Through
+these challenges, the DoD must assure mission success through the
+fielding, aging, and replacement of these systems.  The difficulties
+surrounding DoD acquisition often lead to delays in the introduction
+of the new, high-capability systems. Examples of delayed acquisitions
+include the F-35 Joint Strike Fighter \cite{Werner2018}, the Zumwalt
+class of destroyers \cite{Katz2018}, the KC-46 tanker aircraft
+\cite{Mehta2016}, and U.S. Army command and control systems
+\citep{Edwards2017}.  Aging systems must operate past their planned
+lifetimes to compensate for these delays. This life extension has
+reliability, safety, and operational implications. One method to deal
+with the problems of aging systems is a System Life Extension Program
+(SLEP). A SLEP extends the lifetime and often adds capabilities to an
+aging system. Many government systems are undergoing SLEPs including
+the Army Tactical Missile System \cite{DOTE2017,zacks2015}, weather
+radars \cite{ROC2018}, ships \cite{eckstein2018,NAVSEA2018}, and
+aircraft \cite{Lockheed2017,Garbarino2018,Tirpak2015,jennings2018}
 
-The difficulties surrounding DoD acquisition often lead to delays in
-the introduction of the new, high-capability systems. Examples of
-delayed acquisitions include the F-35 Joint Strike Fighter
-\cite{Werner2018}, the Zumwalt class of destroyers \cite{Katz2018},
-the KC-46 tanker aircraft \cite{Mehta2016}, and U.S. Army command and
-control systems \citep{Edwards2017}.  Aging systems must operate past
-their planned lifetimes to compensate for these delays. This life
-extension has reliability, safety, and operational implications. One
-method to deal with the problems of aging systems is a System Life
-Extension Program (SLEP). A SLEP extends the lifetime and often adds
-capabilities to an aging system. Many government systems are undergoing
-SLEPs including the Army Tactical Missile System
-\cite{DOTE2017,zacks2015}, weather radars \cite{ROC2018}, ships
-\cite{eckstein2018,NAVSEA2018}, and aircraft
-\cite{Lockheed2017,Garbarino2018,Tirpak2015,jennings2018}
+Resilience modeling and analysis supports critical decisions regarding acquisition
+and lifetime extension of complex systems. The DoD stresses
+the importance of resilience when defining mission assurance: ``\ldots
+a process to protect or ensure the continued function and resilience
+of capabilities \ldots'' \cite{DepartmentofDefense2016a} The current
+U.S. National Security Strategy prioritizes increased government
+resilience functions \cite{Trump2017}. The National Security Strategy
+builds upon earlier Presidential Policy Directives defining the future
+posture of critical infrastructure systems. \cite{PPD8,PPD21}. The
+operational definition of resilience provided by the Society of Risk
+Analysis provides a particularly complete framing of the resilience
+effort in this context: ``Resilience is the ability of
+a system to reduce the initial adverse effects (absorptive capability)
+of a disruptive event (stress) and the time/speed and costs at which
+it is able to return to an appropriate functionality/equilibrium
+(adaptive and restorative capability). The disruptive events maybe
+shocking or creeping, endogenous or exogenous.'' \cite{SRA2016}
 
-Resilience modeling supports critical decisions regarding acquisition
-and lifetime extension of complex systems
-\cite{Ayyub2014a,Ayyub2015,Emanuel2017,emanuel2018,emanuel2019}.  This study
-applies a hybrid resilience framework to the problem, leveraging the
-strengths of both system models and resilience models in the context
-of a DoD flight training system. This study developed a discrete event
-simulation for the flight operations of a squadron of aircraft;
-modified a continuous-time resilience model \cite{emanuel2018,emanuel2019} to
-accomodate discrete-time simulations; defined the critical functional
-outputs of the simulation in the context of two stakeholders'
-preferences; and defined stakeholder preference profiles informed by
-the key functional outputs of the system and threats to mission
-assurance. Stakeholder preferences profiles include time horizon,
-endogenous preference, and intertemporal substitutability.
+This study applies a hybrid resilience framework to the problem,
+leveraging the strengths of both system models and resilience models
+in the context of a DoD flight training system. This study developed a
+discrete event simulation for the flight operations of a squadron of
+aircraft; modified a continuous-time resilience model
+\cite{emanuel2018,emanuel2019} to accomodate discrete-time
+simulations; defined the critical functional outputs of the simulation
+in the context of two stakeholders' preferences; and defined
+stakeholder preference profiles informed by the key functional outputs
+of the system and threats to mission assurance. Stakeholder
+preferences profiles include time horizon, endogenous preference, and
+intertemporal substitutability.
 
 
 %% \subsection{Study Content}
@@ -226,7 +232,8 @@ endogenous preference, and intertemporal substitutability.
 %% resilience value for a given course of action in the context of a
 %% given stakeholders preferences.
 
-The rest of the paper consists of three sections: 
+This paper consists of four three sections: this section motivating
+the problem and the applicability of resilience modeling, 
 (\ref{s:HRF}) describes the
 resilience framework and the family of models that are linked
 together to produce a resilience value for a functional output -
@@ -245,17 +252,6 @@ models, and incorporation of a benefit-cost framework.
 \section{Hybrid Resilience Framework}
 \label{s:HRF}
 
-The following section d
-
-The Society for Risk Analysis provides a operational definition of
-resilience: \cite{SRA2016}: ``Resilience is the ability of a system to
-reduce the initial adverse effects (absorptive capability) of a
-disruptive event (stress) and the time/speed and costs at which it
-is able to return to an appropriate functionality/equilibrium
-(adaptive and restorative capability). The disruptive events maybe
-shocking or creeping, endogenous or exogenous.'' This statement
-describes the epochs of a cycle of operation, disturbance, and
-recovery.
 
 Resilience requires a context. Carpenter \emph{et al.}
 \cite{Carpenter2001} summarized the context of resilience in
