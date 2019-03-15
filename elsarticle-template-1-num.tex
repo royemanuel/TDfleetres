@@ -134,7 +134,7 @@ Maryland, United States}
 %% Text of abstract
 
 \end{abstract}
-The US Department of Defense has many long-lived  systems with
+The U.S. Department of Defense has many long-lived  systems with
 multiple stakeholders with different preferences. As these systems
 reach end-of-life, delays to the acquisition of the intended replacement systems drive
 stakeholders to take action to extend the aging system's service life.
@@ -175,9 +175,9 @@ Resilience \sep Simulation \sep Preferences \sep Endogenous Preference
 \section{Motivation}
 \label{S:1}
 
-\subsection{Department of Defense Sustainability Challenges}
+A critical goal of the U.S. Department of Defense (DoD) is mission assurance or
 
-The Department of Defense (DoD) in the United States manages an
+manages an
 incredible number of complicated systems that must operate in austere
 and unforgiving environments while being sustained for long periods of
 time. Replacement systems are expected to be more capable than
@@ -186,12 +186,6 @@ surrounding DoD acquisition often lead to delays in
 the introduction of the new, high-capability systems. Examples of delayed acquisitions
 include the F-35 Joint Strike Fighter
 \cite{Werner2018}, the Zumwalt class of destroyers \cite{Katz2018},
-% * <ba@umd.edu> 2018-09-23T13:13:26.937Z:
-% 
-% > Werner2018
-% References are showing with ? in the pdf as you noted in your message.
-% 
-% ^.
 the KC-46 tanker aircraft \cite{Mehta2016}, and U.S. Army command and
 control systems \citep{Edwards2017}.
 
@@ -206,9 +200,7 @@ Tactical Missile System \cite{DOTE2017,zacks2015}, weather radars
 \cite{eckstein2018,NAVSEA2018}, and aircraft
 \cite{Lockheed2017,Garbarino2018,Tirpak2015,jennings2018}
 
-The U.S. Government recognizes resilience as a key aspect of assuring
-mission success.  The DoD
-defines mission assurance as ``\ldots a process to 
+A key pThe ) defines mission assurance as ``\ldots a process to 
 protect or ensure the continued function and resilience of
 capabilities and assets by refining, integrating and synchronizing all
 aspects of the DoD \ldots'' \cite{DepartmentofDefense2016a} The
@@ -218,11 +210,16 @@ Strategy prioritizes increased government resilience functions
 earlier Presidential Policy Directives defining the future posture of
 critical infrastructure systems. \cite{PPD8,PPD21}. 
 
-This study applied a hybrid resilience framework
-\cite{Ayyub2014a,Ayyub2015,Emanuel2017,Emanuel2018} in the context of
-a fictional DoD flight training system. This study developed a
+Resilience modeling is a tool that can be brought to bear when making 
+critical decisions regarding acquisition and lifetime extension of
+critical DoD systems \cite{Ayyub2014a,Ayyub2015,Emanuel2017,Emanuel2018}. 
+This study applied a resilience framework leveraging the strengths of both system
+models and resilience models 
+in the context of
+a DoD flight training system. This study developed a
 discrete event simulation for the flight operations of a squadron of
-aircraft; defined the critical functional outputs of the simulation
+aircraft; modified a continuous-time resilience model \cite{Emanuel2018} to accomodate discrete-time simulations;
+defined the critical functional outputs of the simulation
 in the context of two stakeholders' preferences; and defined
 stakeholder preference profiles informed by the key functional outputs
 of the system and threats to mission assurance. Stakeholder
@@ -230,14 +227,6 @@ preferences profiles include
 time horizon, endogenous preference, and intertemporal
 substitutability.
 
-The discrete nature of the simulation required
-modification of the analytic resilience model used in previous work
-\cite{Ayyub2014a,Ayyub2015,Emanuel2017,Emanuel2018}.  
-Resilience modeling is a tool that can be brought to bear when making 
-critical decisions regarding acquisition and lifetime extension of
-critical DoD systems. This study
-demonstrates the impact of changes to a stakeholder's preference model
-to the resilience of the system. 
 
 %% \subsection{Study Content}
 %% This paper demonstrates a hybrid resilience framework intended to produce a
@@ -249,14 +238,6 @@ The rest of the paper consists of three sections:
 resilience framework and the family of models that are linked
 together to produce a resilience value for a functional output -
 stakeholder preference profile combination; (\ref{s:CaseStudy})
-% * <ba@umd.edu> 2018-09-23T13:11:13.949Z:
-% 
-% > Section
-% Do not refer to section numbers since some journals will drop the
-% section numbers. You may use the style of "the rest of the paper
-% consists of three section: (1) ...., (2) ...., and (3) ... 
-% 
-% ^.
 describes the system of interest, simulation independent variables, the parameters of
 interest in the system, courses of action, and stakeholder preference
 profiles; (\ref{s:Results}) contains the results of the 
@@ -266,37 +247,12 @@ future work including the system model, stakeholder
 models, and incorporation of a benefit-cost framework. 
 
 
-%% \section{Literature Review}
-%% \subsection{SLEP Research}
 
-%% Levin, Kroshl, and Brodfuehrer investigated a methodology for
-%% antifragile decision-making.
-
-%% NOAA has a SLEP program for its WSR-88D \cite{ROC2018}.
-%% \begin{itemize}
-%%   \item Use the Acq folder from mendeley to populate the SLEP and IOC
-%%     delay considerations
-%% \end{itemize}
-
-%% \subsection{Metrics for Assessing Fleet Health}
-%% \subsubsection{Availability}
-%% Availability is a measure (check that that is the word) for fleet
-%% health. Saleh and Maris \cite{Saleh2006} identify the shift from
-%% component based analysis of reliability to quantification of
-%% system-level attributes such as availability. 
-%% \subsection{Resilience}
-%% Brief discussion of some of the metrics that exist, and why they are
-%% not good for the study?
 
 \section{Hybrid Resilience Framework}
 \label{s:HRF}
 
-%% The reader should refer to Emanuel and Ayyub \cite{Emanuel2018}
-%% \emph{in press} for a thorough introduction to the hybrid resilience
-%% framework. A brief summary with emphasis on expanded points of the
-%% framework.
-
-%% \subsection{Resilience}
+The following section d
 
 The Society for Risk Analysis provides a operational definition of
 resilience: \cite{SRA2016}: ``Resilience is the ability of a system to
@@ -307,12 +263,6 @@ is able to return to an appropriate functionality/equilibrium
 shocking or creeping, endogenous or exogenous.'' This statement
 describes the epochs of a cycle of operation, disturbance, and
 recovery.
-
-%% Figure~\ref{f:perfTraj} depicts these epochs in the context
-%% of system output, performance, or figure-of-merit ($\varphi$), of a
-%% disturbed system over time. \emph{resistance} (...sustain...basic
-%% functionality...) and \emph{recovery} (...restore its basic
-%% functionality...) portion of the plot.
 
 Resilience requires a context. Carpenter \emph{et al.}
 \cite{Carpenter2001} summarized the context of resilience in
@@ -330,36 +280,9 @@ perform?'', and ``What value will today's surplus output have when the
 system suffers a disturbance in functional output?''
 \cite{Emanuel2017,Emanuel2018} 
 
-%% %% \subsection{Generalized Hybrid Model}
-%% \citet{Shanthikumar1983} describe four types of hybrid models composed
-%% of analytical models and simulations. In a class I hybrid model, an analytical model and a
-%% simulation work indpendently to provide analyst's solution. A class II
-%% model uses an analytic model to scope the sampling space for the
-%% simulation. An simulation feeds results into an analytical model in a
-%% class III model (Figure~\ref{f:ClassIIIOnly}. The roles reverse in a
-%% class IV model with the analytic model providing results to the
-%% simulation.
-
-%% \begin{figure}
-%% \begin{center}
-%% \includegraphics[width=5in]{ClassIIIOnly}
-%% \end{center}
-%% \renewcommand{\baselinestretch}{1}
-%% \small\normalsize
-%% \begin{quote}
-%% \caption[Class III hybrid simulation analytic model]{Class III hybrid
-%%   simultion/analytic model \cite{Shanthikumar1983}
-%% \label{f:ClassIIIOnly}}
-%% \end{quote}
-%% \end{figure}
-
-
-
-The class III hybrid simulation/analytical model described by
-\citet{Shanthikumar1983} provided the basis for the hybrid resilience
-framework (Figure~\ref{f:ClassIIIRes}. The hybrid resilience framework
+The hybrid resilience framework
 comprises a system model, a stakeholder preference model, and a resilience
-model. Figure~\ref{f:ClassIIIRes} depicts the
+model (Figure~\ref{f:ClassIIIRes} \citet{Emanuel2018,Shanthikumar1983}. Figure~\ref{f:ClassIIIRes} depicts the
 relationships. The hybrid framework guided
 development of the required functional output data, stakeholder
 preferences, and the resilience analytical model. The framework connects  the
@@ -432,19 +355,16 @@ The hybrid resilience framework guides the analyst through the examination of su
 
 \subsection{System Identification and Functional Output Measurement}
 The analyst first identifies the system(s) of interest and the
-functional output(s). This activity sets the scope of the
-study which drives the physical and functional definition of the
-system(s) of interest. Stakeholders have requirements for output from the
-system of interest. Selecting the system and functional models should
-always be performed in this context. The analyst defines the external
-layers interfacing with the system of interest. The external layers
-provide context for the normal operating environment of the system and
-disturbance type, frequency, and magnitude to the system \cite{APL2015}.
-
-The functional outputs of the system of interest provide the
-measures for the resilience analytic model \cite{Ayyub2014a}. The
-symbol $\varphi$ represents functional performance. The functional
-performance is a key input for the resilience analytical model.
+functional output(s), thereby setting the scope of the study and
+driving the physical and functional definitions. Stakeholders have
+requirements for output from the system of interest. Selecting the
+system and functional models should always be performed in this
+context. The analyst defines the external layers interfacing with the
+system of interest. The external layers provide context for the normal
+operating environment of the system and disturbance type, frequency,
+and magnitude to the system \cite{APL2015}. The system functional
+performance outputs, $\varphi$, are the inputs to the resilience
+analytic model \cite{Ayyub2014a}.
 
 \subsection{Stakeholder Preference Profiles}
 The stakeholder preference profiles provides the context for the
@@ -465,20 +385,12 @@ framework allows for time and disturbance dependent endogeneous
 preferences \cite{Emanuel2018}.
 
 %% \subsubsection{Stakeholder Preference Profiles: Time Horizon}
-Time horizon, $t_h$, is the furthest time in the future that a stakeholder 
-has interest in an item or process \cite{Black2013}. The concept has a
-significant impact on the results 
-of a resilience analysis because time 
-horizon changes with a change in stakeholder perspective
-\cite{Emanuel2018}. Time horizon may also be uncertain in
-% * <ba@umd.edu> 2018-09-23T13:20:12.031Z:
-% 
-% > Emanuel2018
-% Please use the formal style of citation depending on the journal
-% 
-% ^.
-some cases. In the environment we are discussing, a key source of
-uncertainty is the possibility of a delay in a follow-on capability.
+Time horizon, $t_h$, is the furthest time in the future that a
+stakeholder has interest in an item or process \cite{Black2013}. The
+concept has a significant impact on the results of a resilience
+analysis because time horizon changes with a change in stakeholder
+perspective \cite{Emanuel2018}. In the environment we are discussing,
+time horizon depends upon the readiness of a replacement system.
 
 %% \subsubsection{Stakeholder Preference Profiles: Intertemporal
 %%   Substitutability}
@@ -490,12 +402,9 @@ values from zero to one. The value of $\chi$ may be constant for the
 entire time horizon, or it may be dependent upon time or events. Two
 special values of $\chi$ are the \emph{ephemeral} and \emph{permanent}
 cases. The \emph{ephemeral} case ($\chi = 0$) allows no substitution across
-time. When the system has a shortage at time $t_j$, surplus from time
-$t_i$ has no value. The  \emph{permanent} case ($\chi = 1$) where a
+time.  The  \emph{permanent} case ($\chi = 1$) where a
 surplus retains its full value or utility throughout the time
-horizon. Any surplus at time $t_i$ has full value at time $t_j$.
-
-
+horizon. 
 
 %% The \emph{adjacent}
 %% case for intertemporal substitutability ``transfers'' surplus from adjacent
@@ -650,21 +559,25 @@ horizon. Any surplus at time $t_i$ has full value at time $t_j$.
 % 
 % ^.
 
-\subsection{Resilience Analytical Model}
+\subsection{Resilience Model}
 
-
-Ayyub \cite{Ayyub2014a} defined the model for resilience used for
-this study. Efforts by Emanuel and Ayyub
-\cite{Emanuel2017,Emanuel2018} further develop the resilience model
-to prepare it to incorporate the outputs of the stakeholder preference
-model. The analytical resilience model is:
+The study applied a resilience model that incorporates
+stakeholder preferences \cite{Ayyub2014a,Emanuel2017,Emanuel2018}.
+The resilience model captures the ratio of functional
+output to desired functional output over the stakeholder's entire time
+horizon. The resilience model is:
 \begin{equation}
   \label{e:contResilience}
     R = \frac{M_{\chi} \Delta T_i + F_{\chi} \Delta T_f + R_{\chi}
     \Delta T_r + H_{\chi} \Delta T_h}
   {\Delta T_i + \Delta T_f + \Delta T_r + \Delta T_h}
 \end{equation}
-where the factors $M_{\chi}$, $F_{\chi}$, etc., for continuous system are:
+$R$ is resilience, and the factors $M_{\chi}$, $F_{\chi}$, etc.,
+capture the ratio of actual performance to desired performance. The
+$\Delta T$ factors are segments of time during pre-failure ($\Delta
+T_i$), from failure initiation to the failure completion ($\Delta
+T_f$), during recovery ($\Delta T_r$), and post-recovery ($\Delta
+T_h$).  The equations for performance ratios ($M_{\chi}$, etc.) are:
 \begin{equation}
   \label{e:RPC}
   F_{\chi}(t) = \left\{\begin{array}{lcr}
@@ -674,11 +587,14 @@ where the factors $M_{\chi}$, $F_{\chi}$, etc., for continuous system are:
       \frac{\displaystyle\int_{t_i}^{t_f}\varphi(t)-Q(t)dt}{\displaystyle\int_{t_i}^{t_f}Q(t)dt}
       & \text{ for } & \varphi(t) > Q(t)
       \end{array}\right.
-\end{equation}
+\end{equation}.
 
-The next task is to develop a discrete representation of the
-above. The overal equation for resilience, $R$, remains unchanged, but
-the equations for each profile must be modified incorporating
+
+The study uses a discrete event simulation, so a discrete
+representation of the resilience model is necessary to use the
+simulation's outputs. The overal equation for resilience
+(Eq. \ref{e:contResilience}) remains unchanged. The 
+each profile (Eqs. \ref{e:RPC} must be modified incorporating
 Equation~\ref{e:contResilience}.
 
 \begin{equation}
@@ -745,8 +661,8 @@ aging system, can mitigate a host of problems:
 \item Capability improvement \cite{Burgess2015}
 \end{itemize}
 
-The decisions for SLEP include systems to modify, amount of life to add, number of
-systems to SLEP, and when the SLEP should occur. The impact of the
+The decisions involving development of a SLEP include systems to modify, amount of life to add, number of
+systems to send through the SLEP, and when the SLEP should occur. The impact of the
 decisions often occur well beyond the career lifetimes of the people
 who make them. Considering the time horizon of the individuals is important.
 
@@ -760,7 +676,7 @@ yet exists for the T-45; The T-45 is undergoing SLEP to increase its operational
 lifetime. The T-45 SLEP includes detailed inspections, preventive parts 
 replacement, corrosion control, and crack control \cite{jennings2018}.
 
-When possible, the study used unclassified US Navy documents
+When possible, the study used unclassified U.S. Navy documents
 available via official DoD websites to guide development of the
 simulation. In cases where information is missing, the authors made
 simulation decisions consistent with personal experience and with the
@@ -768,19 +684,19 @@ goal of making the simulation tractable.
 
 Figure~\ref{f:FleetFramework} depicts the hybrid resilience framework
 for the training squadron case study. The system of interest is the
-training squadron comprising aircrew and aircraft. Threats to the
-system are a delay in a replacement aircraft and a surge in graduate
-production. The stakeholders share the graduation per quarter and
-satisfaction rate functional outputs. Program managers are also
-concerned with the daily aircraft availability. The stakeholders have
-different preference profiles (time horizon, endogenous preference,
-and intertemporal substitutability) for each functional output. The
-resilience analytical model calculates resilience of each functional
-output-stakeholder preference pairing.
+training squadron comprising aircrew and aircraft. System stressors
+include delays fielding a replacement aircraft and surges required
+graduates produced per quarter. The stakeholders share the graduation
+per quarter and satisfaction rate functional outputs. Program managers
+are also concerned with the daily aircraft availability. The
+stakeholders have different preference profiles (time horizon,
+endogenous preference, and intertemporal substitutability) for each
+functional output. The resilience analytical model calculates
+resilience of each functional output-stakeholder preference pairing.
 
 \begin{landscape}
 \begin{figure}[h]
-  \centering\includegraphics[width=8in]{FleetHybridModelDetailedEmb}
+  \centering\includegraphics[width=8in]{CaseStudyHRF}
   \caption{Case Study Hybrid Resilience Framework}
   \label{f:FleetFramework}
 \end{figure}
@@ -789,30 +705,30 @@ output-stakeholder preference pairing.
 
 \subsection{Training Squadron Simulation}
 
-The simulation uses the SimPy \cite{Scherfke2018} package in Anaconda
-% * <ba@umd.edu> 2018-09-23T13:30:34.500Z:
-% 
-% > The
-% I noticed that you table titles are under the tables. Typically for
-% figures they are above the tables, whereas for figures under the
-% figures. 
-% 
-% ^.
-% * <ba@umd.edu> 2018-09-23T13:28:41.762Z:
-% 
-% > The
-% Enhance the readability of Figure 8.
-% Each main box in the figure should have a title. You provided titles for most but not all.
-% The left bottom is "Stakeholder" <-- I presume
-% 
-% ^.
-Python 3.5 \cite{Anaconda2016}. SimPy contains 
-prebuilt capability to define a simulation environment, processes, and
-resources. The squadron simulation comprises two primary objects: aircrew and
+%% The simulation uses the SimPy \cite{Scherfke2018} package in Anaconda
+%% % * <ba@umd.edu> 2018-09-23T13:30:34.500Z:
+%% % 
+%% % > The
+%% % I noticed that you table titles are under the tables. Typically for
+%% % figures they are above the tables, whereas for figures under the
+%% % figures. 
+%% % 
+%% % ^.
+%% % * <ba@umd.edu> 2018-09-23T13:28:41.762Z:
+%% % 
+%% % > The
+%% % Enhance the readability of Figure 8.
+%% % Each main box in the figure should have a title. You provided titles for most but not all.
+%% % The left bottom is "Stakeholder" <-- I presume
+%% % 
+%% % ^.
+%% Python 3.5 \cite{Anaconda2016}. SimPy contains 
+%% prebuilt capability to define a simulation environment, processes, and
+%% resources.
+The squadron simulation comprises two primary objects: aircrew and
 aircraft. Multiple processes, defined by a scheduler object, determine
 which aircraft and aircrew are available at a given time, and match
-the available aircraft and aircrew to conduct a training event.
-
+the available aircraft and aircrew to conduct a training event. 
 Figure~\ref{f:DESflow} depicts the simulation flow. The simulation
 revolves around the event of a flight.  A flight requires a student,
 an instructor, and an aircraft. At the completion of the flight, each
@@ -832,7 +748,7 @@ distribution from 18 to 32.  The aircraft lifetime is 7,200 hours. Under this
 \emph{normal} operating procedure, the  
 aircraft last just to the planned end of life, or fifteen years.
 
-The motivating problem is a change in sundown date. Much to the
+The motivating problem is an uncertain time horizon. Much to the
 chagrin of the program manager, the procurement of a follow-on
 training aircraft has been delayed. To solve this problem the program manager
 initiates a service life extension plan for the airframe. As each
@@ -910,8 +826,7 @@ and age to start SLEP.
 
 \subsubsection{Aircrew}
 
-Students and instructors are aircrew. Both
-students and instructors record hours flown for the aircrew.  A
+Students and instructors are aircrew.  A
 student graduates from the curriculum with 61 complete flights and
 less than 4 failed 
 flights \cite{Air2009}. The student enters the ``graduated students''
@@ -978,12 +893,12 @@ flight limit ranging from 3,500  to 7,000 flight hours to prevent
 excessive wait times.  
 
 \subsubsection{Flight Scheduling}
-The scheduler is the heartbeat of the system. The scheduler uses a
-simplified calendar with a five-day flying week and two day weekend
-with maintenance but no flying. Each working (flying) day is split into 4
-events spaced by 3 hours for each start time. The scheduler uses a
-uniform distribution to select a flight time between 0.5 and 2.0 hours
-for a single event.
+The scheduler provides the heartbeat of the squadron simulation. The
+scheduler's calendar was a five-day flying week and two day
+maintenance-only weekend. Each flying day is split into 4 events
+spaced by 3 hours for each start time. The scheduler uses a uniform
+distribution to select a flight time between 0.5 and 2.0 hours for a
+single event.
 
 The two disruptive events
 are fleet wear-out and change in demand for graduates. Each flight
