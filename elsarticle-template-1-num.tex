@@ -117,7 +117,7 @@
 %% \address[label1]{<address>}
 %% \address[label2]{<address>}
 
-\author{Roy Emanuel II\corref{cor1}}
+\author{Roy Emanuel II, Ph.D.\corref{cor1}}
 
 \address{Center for Technology and Systems Management\\
 Department of Civil and Environmental Engineering\\
@@ -218,7 +218,7 @@ leveraging the strengths of both system models and resilience models
 in the context of a DoD flight training system. This study developed a
 discrete event simulation for the flight operations of a squadron of
 aircraft; modified a continuous-time resilience model
-\cite{emanuel2018,emanuel2019} to accomodate discrete-time
+\cite{emanuel2018,emanuel2019} to accommodate discrete-time
 simulations; defined the critical functional outputs of the simulation
 in the context of two stakeholders' preferences; and defined
 stakeholder preference profiles informed by the key functional outputs
@@ -363,13 +363,13 @@ to time-shift surplus functional output to periods of shortage.
 
 %% \subsubsection{Stakeholder Preference Profiles: Endogoneous Preference}
 
-Endogeneous preference, $Q$, is the amount of the functional output
+Endogenous preference, $Q$, is the amount of the functional output
 that a stakeholder desires at a given time \cite{Black2013}.  Many
-models of resilience assume the stakeholder's endogeneous preference
+models of resilience assume the stakeholder's endogenous preference
 remains constant over time, is equal to the 100\% 
 performance level under operating conditions, and does not change
 after a disturbance \cite{Emanuel2017}. The hybrid resilience
-framework allows for time and disturbance dependent endogeneous
+framework allows for time and disturbance dependent endogenous
 preferences \cite{emanuel2018,emanuel2019}.
 
 %% \subsubsection{Stakeholder Preference Profiles: Time Horizon}
@@ -562,7 +562,7 @@ horizon. The resilience model is:
 \end{equation}
 $R$ is resilience, and the factors $M_{\chi}$, $F_{\chi}$, etc.,
 capture the ratio of actual performance to desired performance. The
-$\Delta T$ factors are segments of time during pre-failure ($\Delta
+$\Delta T$ factors are segments of time before system failure begins ($\Delta
 T_i$), from failure initiation to the failure completion ($\Delta
 T_f$), during recovery ($\Delta T_r$), and post-recovery ($\Delta
 T_h$).  The equations for performance ratios ($M_{\chi}$, etc.) are:
@@ -583,7 +583,7 @@ a discrete event simulation, so a discrete
 representation of the resilience model is necessary to use the
 simulation's outputs. Eq. \ref{e:contResilience} remains unchanged,
 but the 
-each profiles (Eqs. \ref{e:RPC} must be modified as follows to accomodate
+each profiles (Eqs. \ref{e:RPC} must be modified as follows to accommodate
 discrete time steps of the simulation:
 
 \begin{equation}
@@ -760,7 +760,7 @@ aircraft last just to the planned end of life, or fifteen years.
 The motivating problem is an uncertain time horizon. Much to the
 chagrin of the program manager, the procurement of a follow-on
 training aircraft has been delayed. To solve this problem the program manager
-initiates a service life extension plan for the airframe. As each
+initiates a service life extension plan for the aircraft. As each
 aircraft approaches is life limit, it is placed in a queue to receive
 modifications to enhance the lifetime. The study looks at extending
 operational use of the fleet in five year increments from 15 years
@@ -770,7 +770,7 @@ The following sections define the simulation entities in more detail.
 
 \begin{table}[h]
 \begin{center}
-    \caption{Simulation Paramager Starting Values }
+    \caption{Simulation Parameter Starting Values }
   \label{t:StartingValues}
     \begin{tabular}{l c }
       \hline
@@ -897,8 +897,7 @@ aircraft to 18,000 flight hours, but the aircraft will be unavailable for
 An aircraft enters the SLEP line when it reaches its SLEP flight hour
 limit. The SLEP line has a limited number of slots available in the
 hangar, so the program manager gradually introduces aircraft to the
-SLEP line. The simulation assigns each aircraft instantiation a SLEP
-flight limit ranging from 3,500  to 7,000 flight hours to prevent
+SLEP line. The simulation assigns each aircraft a flight limit ranging from 3,500  to 7,000 flight hours to prevent
 excessive wait times.  
 
 \subsubsection{Flight Scheduling}
@@ -1185,7 +1184,7 @@ students; and time to graduate for each
 student. %% Figures~\ref{f:ts_no_surge} shows an example run for the ``No
 %% surge'' scenarios for each course of action. 
 Figure ~\ref{f:ts_surge} show an single run for each course of action
-in the ``Surge'' sceanrio. The solid line is the number of aircraft on the
+in the ``Surge'' scenario. The solid line is the number of aircraft on the
 flightline, the dashed line is the desired number of graduates per
 quarter, and the points are the actual number of graduates in a
 quarter. The shaded area from 12-14 years highlights the
