@@ -578,12 +578,13 @@ T_h$).  The equations for performance ratios ($M_{\chi}$, etc.) are:
 \end{equation}.
 
 
-The study uses a discrete event simulation, so a discrete
+The study represents the operations of a flight training squadron with
+a discrete event simulation, so a discrete
 representation of the resilience model is necessary to use the
-simulation's outputs. The overal equation for resilience
-(Eq. \ref{e:contResilience}) remains unchanged. The 
-each profile (Eqs. \ref{e:RPC} must be modified incorporating
-Equation~\ref{e:contResilience}.
+simulation's outputs. Eq. \ref{e:contResilience} remains unchanged,
+but the 
+each profiles (Eqs. \ref{e:RPC} must be modified as follows to accomodate
+discrete time steps of the simulation:
 
 \begin{equation}
 % * <ba@umd.edu> 2018-09-23T13:25:34.471Z:
@@ -637,6 +638,13 @@ description.
   \end{tabular}
   \end{center}
 \end{table}
+
+Each stakeholder defines their own preference profile including time
+horizon ($t_h$), endogenous preference ($Q_t$), and intertemporal
+substitutability ($\chi$). The resilience model applies the preference
+profile to the system performance over time to yield a dimensionless
+value for resilience. Resilience has a minimum of zero and no
+maximum. 
 
 \section{Case Study: Training Squadron of Aircraft}
 \label{s:CaseStudy}
