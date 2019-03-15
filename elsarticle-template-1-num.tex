@@ -175,57 +175,50 @@ Resilience \sep Simulation \sep Preferences \sep Endogenous Preference
 \section{Motivation}
 \label{S:1}
 
-A critical goal of the U.S. Department of Defense (DoD) is mission assurance or
-
-manages an
+The U.S. Department of Defense (DoD) manages an
 incredible number of complicated systems that must operate in austere
 and unforgiving environments while being sustained for long periods of
-time. Replacement systems are expected to be more capable than
-predecessors. The difficulties
-surrounding DoD acquisition often lead to delays in 
-the introduction of the new, high-capability systems. Examples of delayed acquisitions
-include the F-35 Joint Strike Fighter
+time.  Through these challenges, the DoD must assure mission success
+through the fielding, aging, and replacement of these systems. The DoD
+stresses the importance of resilience when defining mission assurance:
+``\ldots a process to protect or ensure the continued function and
+resilience of capabilities \ldots'' \cite{DepartmentofDefense2016a}
+The current U.S. National Security Strategy prioritizes increased
+government resilience functions \cite{Trump2017}. The National
+Security Strategy builds upon earlier Presidential Policy Directives
+defining the future posture of critical infrastructure
+systems. \cite{PPD8,PPD21}.
+
+The difficulties surrounding DoD acquisition often lead to delays in
+the introduction of the new, high-capability systems. Examples of
+delayed acquisitions include the F-35 Joint Strike Fighter
 \cite{Werner2018}, the Zumwalt class of destroyers \cite{Katz2018},
 the KC-46 tanker aircraft \cite{Mehta2016}, and U.S. Army command and
-control systems \citep{Edwards2017}.
-
-Aging systems must operate past
-their planned lifetimes to compensate for these delays. This life extension has
-reliability, safety, and operational implications. One method to deal
-with the problems of aging systems is a System Life Extension
-Program (SLEP). A SLEP extends the lifetime and often adds capability
-to an aging system. Many government systems are undergoing SLEP including the Army
-Tactical Missile System \cite{DOTE2017,zacks2015}, weather radars
-\cite{ROC2018}, ships 
+control systems \citep{Edwards2017}.  Aging systems must operate past
+their planned lifetimes to compensate for these delays. This life
+extension has reliability, safety, and operational implications. One
+method to deal with the problems of aging systems is a System Life
+Extension Program (SLEP). A SLEP extends the lifetime and often adds
+capabilities to an aging system. Many government systems are undergoing
+SLEPs including the Army Tactical Missile System
+\cite{DOTE2017,zacks2015}, weather radars \cite{ROC2018}, ships
 \cite{eckstein2018,NAVSEA2018}, and aircraft
 \cite{Lockheed2017,Garbarino2018,Tirpak2015,jennings2018}
 
-A key pThe ) defines mission assurance as ``\ldots a process to 
-protect or ensure the continued function and resilience of
-capabilities and assets by refining, integrating and synchronizing all
-aspects of the DoD \ldots'' \cite{DepartmentofDefense2016a} The
-current U.S. National Security  
-Strategy prioritizes increased government resilience functions
-\cite{Trump2017}. The National Security Strategy builds upon
-earlier Presidential Policy Directives defining the future posture of
-critical infrastructure systems. \cite{PPD8,PPD21}. 
-
-Resilience modeling is a tool that can be brought to bear when making 
-critical decisions regarding acquisition and lifetime extension of
-critical DoD systems \cite{Ayyub2014a,Ayyub2015,Emanuel2017,Emanuel2018}. 
-This study applied a resilience framework leveraging the strengths of both system
-models and resilience models 
-in the context of
-a DoD flight training system. This study developed a
-discrete event simulation for the flight operations of a squadron of
-aircraft; modified a continuous-time resilience model \cite{Emanuel2018} to accomodate discrete-time simulations;
-defined the critical functional outputs of the simulation
-in the context of two stakeholders' preferences; and defined
-stakeholder preference profiles informed by the key functional outputs
-of the system and threats to mission assurance. Stakeholder
-preferences profiles include
-time horizon, endogenous preference, and intertemporal
-substitutability.
+Resilience modeling supports critical decisions regarding acquisition
+and lifetime extension of complex systems
+\cite{Ayyub2014a,Ayyub2015,Emanuel2017,emanuel2018,emanuel2019}.  This study
+applies a hybrid resilience framework to the problem, leveraging the
+strengths of both system models and resilience models in the context
+of a DoD flight training system. This study developed a discrete event
+simulation for the flight operations of a squadron of aircraft;
+modified a continuous-time resilience model \cite{emanuel2018,emanuel2019} to
+accomodate discrete-time simulations; defined the critical functional
+outputs of the simulation in the context of two stakeholders'
+preferences; and defined stakeholder preference profiles informed by
+the key functional outputs of the system and threats to mission
+assurance. Stakeholder preferences profiles include time horizon,
+endogenous preference, and intertemporal substitutability.
 
 
 %% \subsection{Study Content}
@@ -268,7 +261,7 @@ Resilience requires a context. Carpenter \emph{et al.}
 \cite{Carpenter2001} summarized the context of resilience in
 socio-ecological problems with the question ``... resilience of what
 to what?''  Studies in engineering proposed adding ``for whom?'' when
-discussing engineered systems \cite{Emanuel2017,Emanuel2018}. 
+discussing engineered systems \cite{Emanuel2017,emanuel2018,emanuel2019}. 
 Ayyub \cite{Ayyub2014a} defined the method for measuring
 resilience: ``The resilience of a system\'s function can be measured
 based on the persistence of a corresponding functional performance
@@ -278,11 +271,11 @@ of the system's functional output. The stakeholder preferences answer
 the questions ``How much is enough?'', ``How long must the system
 perform?'', and ``What value will today's surplus output have when the
 system suffers a disturbance in functional output?''
-\cite{Emanuel2017,Emanuel2018} 
+\cite{Emanuel2017,emanuel2018,emanuel2019} 
 
 The hybrid resilience framework
 comprises a system model, a stakeholder preference model, and a resilience
-model (Figure~\ref{f:ClassIIIRes} \citet{Emanuel2018,Shanthikumar1983}. Figure~\ref{f:ClassIIIRes} depicts the
+model (Figure~\ref{f:ClassIIIRes} \citet{emanuel2018,emanuel2019,Shanthikumar1983}. Figure~\ref{f:ClassIIIRes} depicts the
 relationships. The hybrid framework guided
 development of the required functional output data, stakeholder
 preferences, and the resilience analytical model. The framework connects  the
@@ -382,14 +375,14 @@ remains constant over time, is equal to the 100\%
 performance level under operating conditions, and does not change
 after a disturbance \cite{Emanuel2017}. The hybrid resilience
 framework allows for time and disturbance dependent endogeneous
-preferences \cite{Emanuel2018}.
+preferences \cite{emanuel2018,emanuel2019}.
 
 %% \subsubsection{Stakeholder Preference Profiles: Time Horizon}
 Time horizon, $t_h$, is the furthest time in the future that a
 stakeholder has interest in an item or process \cite{Black2013}. The
 concept has a significant impact on the results of a resilience
 analysis because time horizon changes with a change in stakeholder
-perspective \cite{Emanuel2018}. In the environment we are discussing,
+perspective \cite{emanuel2018,emanuel2019}. In the environment we are discussing,
 time horizon depends upon the readiness of a replacement system.
 
 %% \subsubsection{Stakeholder Preference Profiles: Intertemporal
@@ -562,7 +555,7 @@ horizon.
 \subsection{Resilience Model}
 
 The study applied a resilience model that incorporates
-stakeholder preferences \cite{Ayyub2014a,Emanuel2017,Emanuel2018}.
+stakeholder preferences \cite{Ayyub2014a,Emanuel2017,emanuel2018,emanuel2019}.
 The resilience model captures the ratio of functional
 output to desired functional output over the stakeholder's entire time
 horizon. The resilience model is:
